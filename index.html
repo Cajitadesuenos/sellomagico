@@ -2,13 +2,77 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
   <title>SELLO MAGICO</title>
   <style>
     body { margin:0; font-family: 'Segoe UI', sans-serif; color:#333; }
-    header { background:#F4C1C3; padding:20px; text-align:center; }
-    header h1 { font-family: 'Fredericka the Great', cursive; margin:0; color:#fff; font-size:2.5rem; }    
-    nav a { margin:0 15px; color:#fff; text-decoration:none; font-weight:bold; }
+    
+    /* Barra fija superior */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #B38F7B; 
+      color: #fff;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      padding: 8px 10px;
+      z-index: 1000;
+      letter-spacing: 0.5px;
+    }
+
+    header { 
+      background:#F4C1C3; 
+      padding:20px; 
+      text-align:center; 
+      margin-top:50px; /* espacio para que no tape la barra */
+    }
+
+    header h1 { 
+      font-family: 'Fredericka the Great', cursive; 
+      margin:0; 
+      color:#fff; 
+      font-size:2.5rem; 
+    }    
+
+    /* Menú elegante */
+    header nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 10px;
+    }
+
+    header nav a {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: #fff;      
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    header nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #fff; 
+      transition: width 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: #4b3d3d; 
+    }
+
+    header nav a:hover::after {
+      width: 100%;
+    }
+
     section { padding:40px 20px; }
     .catalogo { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
     .item { border:1px solid #eee; border-radius:8px; overflow:hidden; width:300px; }
@@ -23,6 +87,11 @@
   </style>
 </head>
 <body>
+  <!-- Barra fija superior -->
+  <div class="top-bar">
+    Personalizamos fecha, color, mensaje y nombres de acuerdo a tu preferencia. Envío local y nacional.
+  </div>
+
   <header>
     <h1>Sello Mágico</h1>
     <nav>
@@ -34,7 +103,7 @@
 
   <section id="inicio" style="text-align:center;">
     <h2 style="color:#B38F7B;">Invitaciones elegantes para tus momentos especiales</h2>
-    <h2 style="color:#B38F7B;"Personalizamos fecha color, mensaje y nombres de acuerdo a tu preferencia. Envío local y nacional.</h2>
+        
   </section>
 
   <section id="catalogo">
@@ -146,6 +215,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
